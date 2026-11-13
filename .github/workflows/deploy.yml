@@ -1,0 +1,42 @@
+name: Deploy Wiki to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar Dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compilar Documentação MkDocs
+        run: |
+          mkdocs build
+
+      - name: Copiar _headers para o diretório de build
+        run: |
+          cp docs/_headers site/_headers 2>/dev/null || true
+          cp Guia_Definitivo_Migracao_SAP_S4HANA.pdf site/assets/ 2>/dev/null || true
+
+      - name: Publicar no Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy site --project-name=sap-s4hana-migration-wiki

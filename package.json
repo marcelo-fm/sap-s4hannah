@@ -1,0 +1,13 @@
+{
+  "name": "sap-s4hana-migration-wiki",
+  "version": "1.0.0",
+  "description": "Base de Conhecimento e Wiki de Migração SAP ECC para SAP S/4HANA",
+  "scripts": {
+    "build": "pip install -r requirements.txt && mkdocs build",
+    "pdf": "python export_pdf.py",
+    "serve": "mkdocs serve"
+  },
+  "keywords": ["sap", "s4hana", "ecc", "migration", "mkdocs", "clean-core"],
+  "author": "Equipe de Arquitetura SAP",
+  "license": "MIT"
+}

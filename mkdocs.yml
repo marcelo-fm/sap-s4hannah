@@ -1,0 +1,94 @@
+site_name: "Guia Definitivo de Migração SAP ECC para SAP S/4HANA"
+site_description: "Base de Conhecimento Técnica e Prática para Consultores e Arquitetos SAP em Transição para o S/4HANA"
+site_author: "Equipe de Arquitetura & Engenharia SAP"
+repo_url: ""
+repo_name: ""
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    # Esquema Claro
+    - scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Mudar para tema escuro
+    # Esquema Escuro
+    - scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Mudar para tema claro
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
+    - content.action.view
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.tilde
+  - tables
+  - attr_list
+  - def_list
+  - md_in_html
+  - toc:
+      permalink: "#"
+      toc_depth: 3
+
+nav:
+  - Início: index.md
+  - 01. Fundamentos:
+      - O que é o S/4HANA: 01-fundamentos/o-que-e-s4hana.md
+      - Arquitetura SAP HANA (In-Memory & Colunar): 01-fundamentos/arquitetura-hana.md
+      - SAP BTP & Clean Core: 01-fundamentos/sap-btp-e-clean-core.md
+  - 02. De-Para Técnico:
+      - Universal Journal (ACDOCA): 02-de-para-tecnico/universal-journal-acdoca.md
+      - Logística Simplificada (MATDOC & SD): 02-de-para-tecnico/logistica-matdoc-sd.md
+      - Business Partner & CVI: 02-de-para-tecnico/business-partner-cvi.md
+      - SAP Fiori vs SAP GUI: 02-de-para-tecnico/fiori-vs-sap-gui.md
+  - 03. Estratégias & Ferramentas:
+      - Abordagens de Migração (Brown vs Green vs Selective): 03-estrategias-e-ferramentas/abordagens-migracao.md
+      - Metodologia SAP Activate: 03-estrategias-e-ferramentas/metodologia-sap-activate.md
+      - Kit de Ferramentas Técnicas (Readiness Check, LTMC, ATC, SUM/DMO): 03-estrategias-e-ferramentas/kit-ferramentas.md
+  - 04. Casos Reais & Lições:
+      - Experiências de Clientes e Armadilhas: 04-casos-reais-e-licoes/experiencias-clientes.md
+      - Checklist de Sobrevivência (Fit-to-Standard): 04-casos-reais-e-licoes/checklist-sobrevivencia.md
+  - 05. Referências:
+      - Glossário & Conceitos Periféricos: 05-referencias/glossario-e-conceitos.md
+      - Diretório de Links Oficiais SAP: 05-referencias/links-oficiais.md

@@ -1,0 +1,12 @@
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: document-domain=()
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.pdf
+  Content-Type: application/pdf
+  Content-Disposition: inline; filename="Guia_Definitivo_Migracao_SAP_S4HANA.pdf"
