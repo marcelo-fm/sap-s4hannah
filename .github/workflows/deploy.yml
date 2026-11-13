@@ -1,10 +1,6 @@
-name: Deploy Wiki to Cloudflare Pages
+name: Deploy Manual para Cloudflare Pages (Opcional via Actions)
 
 on:
-  push:
-    branches:
-      - main
-      - master
   workflow_dispatch:
 
 jobs:
